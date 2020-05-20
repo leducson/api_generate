@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "api_generate"
+options = {}
+
+optparse = OptionParser.new do|opts|
+
+  opts.on("--add-gem", "Add gem to gem file") do
+    puts "Add gem to gem file"
+    InstallGem.add_gem_to_gemfile
+  end
+
+  opts.on("--install", "Install gem") do
+    puts "Install gem dependeci with gem"
+    InitGem.install_gem
+  end
+
+  opts.on("--init-rspec", "Init rspec gem") do
+    puts "Init rspec gem"
+    InitGem.init_rspec
+  end
+
+  opts.on("--init-rswag", "Init rswag gem") do
+    puts "Init rswag gem"
+    InitGem.init_rswag
+  end
+
+  opts.on("--init-rack", "Init rack gem") do
+    puts "Init rack gem"
+    InitGem.init_rack_cors
+  end
+
+  opts.on("-h", "--help", "Display this screen") do
+    puts opts
+    exit
+  end
+end
+
+optparse.parse!
+
+
+
+ARGV.each do |f|
+  puts "Resizing image #{f}"
+
+  sleep 0.5
+end
