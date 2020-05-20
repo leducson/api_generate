@@ -1,6 +1,6 @@
 require "api_generate/version"
+require "init_gem"
 
 module ApiGenerate
-  class Error < StandardError; end
-  # Your code goes here...
+
 end
